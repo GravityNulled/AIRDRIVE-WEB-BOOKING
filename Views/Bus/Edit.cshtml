@@ -1,0 +1,27 @@
+@model Bus
+
+<h1>Edit Bus</h1>
+
+<form asp-controller="Bus" asp-action="Edit" method="post">
+    <div class="mb-3">
+        <label asp-for="BusId">Bus Id</label>
+        <input type="text" class="form-control" asp-for="BusId">
+    </div>
+    <div class="mb-3">
+        <label asp-for="BusNo">Bus No</label>
+        <input type="text" class="form-control" asp-for="BusNo">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Type">Select Bus Type</label>
+        <select class="form-select" asp-for="Type" asp-items="@Html.GetEnumSelectList<BusType>()">Bus Type</select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Capacity">Bus Capacity</label>
+        <input type="number" class="form-control" asp-for="Capacity">
+    </div>
+    <div class="mb-3">
+        <label asp-for="SeatsAvailable">Seats Available</label>
+        <input type="number" class="form-control" asp-for="SeatsAvailable">
+    </div>
+    <button class="btn btn-primary" type="submit">Update Bus</button>
+</form>

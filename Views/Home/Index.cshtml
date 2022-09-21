@@ -1,0 +1,29 @@
+﻿@model CompanyMvc.Models.ViewModels.RoutesViewModel;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <h1>Welcome To Airdrive Online Booking</h1>
+    <h2>Book Your Tickets Here</h2>
+</div>
+<div>
+    <p>Please choose your Destination and Deperture Locations</p>
+</div>
+<div class="shadow-lg p-3 mb-5 bg-body rounded">
+    <form method="post" asp-action="Index" asp-controller="Home">
+    <div class="mb-3">
+        <label >Source</label>
+        <select class="form-select" asp-for="SelectedRouteTag" asp-items="Model.SelectListSource"></select>
+    </div>
+    <div class="mb-3">
+        <label>Travel Date</label>
+        <input type="date" asp-for="TravelDate">
+    </div>
+    <div class="mb-3">
+        <label>Destination</label>
+        <select class="form-select" asp-for="SelectedRouteTag" asp-items="Model.SelectListDestination"></select>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+</div>

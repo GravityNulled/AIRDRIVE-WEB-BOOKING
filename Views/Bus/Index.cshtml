@@ -1,0 +1,29 @@
+@model List<BusModel>
+
+
+<table class="table">
+    <th>
+        <tr>
+            <th>ID</th>
+            <th>Bus No</th>
+            <th>Bus Type</th>
+            <th>Bus Destination</th>
+            <th>Bus Capacity</th>
+            <th>Seats Available</th>
+        </tr>
+    </th>
+    <tbody>
+        @foreach (var bus in Model)
+        {
+            <tr>
+                <td>@bus.BusId</td>
+                <td>@bus.BusNo</td>
+                <td>@bus.Type</td>
+                <td>@bus.Destination</td>
+                <td>@bus.Capacity</td>
+                <td>@bus.SeatsAvailable</td>
+                <td><a asp-action="Edit" asp-route-id="@bus.BusId">View</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
