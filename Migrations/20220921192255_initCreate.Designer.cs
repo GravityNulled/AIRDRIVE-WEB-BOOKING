@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CompanyMvc.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220921163439_updatedBus")]
-    partial class updatedBus
+    [Migration("20220921192255_initCreate")]
+    partial class initCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -81,6 +81,9 @@ namespace CompanyMvc.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("BusRouteId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("Capacity")
                         .HasColumnType("INTEGER");
 
@@ -98,6 +101,8 @@ namespace CompanyMvc.Migrations
 
                     b.HasKey("BusId");
 
+                    b.HasIndex("BusRouteId");
+
                     b.ToTable("Buses");
                 });
 
@@ -105,9 +110,6 @@ namespace CompanyMvc.Migrations
                 {
                     b.Property<int>("BusRouteId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("BusId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Destination")
@@ -126,9 +128,6 @@ namespace CompanyMvc.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("BusRouteId");
-
-                    b.HasIndex("BusId")
-                        .IsUnique();
 
                     b.ToTable("BusRoutes");
                 });
@@ -152,15 +151,15 @@ namespace CompanyMvc.Migrations
                     b.Navigation("Bus");
                 });
 
-            modelBuilder.Entity("CompanyMvc.Models.BusRoute", b =>
+            modelBuilder.Entity("CompanyMvc.Models.Bus", b =>
                 {
-                    b.HasOne("CompanyMvc.Models.Bus", "Bus")
-                        .WithOne("BusRoute")
-                        .HasForeignKey("CompanyMvc.Models.BusRoute", "BusId")
+                    b.HasOne("CompanyMvc.Models.BusRoute", "BusRoute")
+                        .WithMany("Bus")
+                        .HasForeignKey("BusRouteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Bus");
+                    b.Navigation("BusRoute");
                 });
 
             modelBuilder.Entity("CompanyMvc.Models.ApplicationUser", b =>
@@ -169,9 +168,9 @@ namespace CompanyMvc.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("CompanyMvc.Models.Bus", b =>
+            modelBuilder.Entity("CompanyMvc.Models.BusRoute", b =>
                 {
-                    b.Navigation("BusRoute");
+                    b.Navigation("Bus");
                 });
 #pragma warning restore 612, 618
         }

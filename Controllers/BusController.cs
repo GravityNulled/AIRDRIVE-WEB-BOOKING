@@ -15,15 +15,16 @@ namespace CompanyMvc.Controllers
 
         public async Task<ActionResult<BusModel>> Index()
         {
-            var buses = await _dBcontext.Buses.Join(_dBcontext.BusRoutes, b => b.BusId, r => r.BusId, (b, r) => new BusModel
-            {
-                BusId = b.BusId,
-                BusNo = b.BusNo,
-                Capacity = b.Capacity,
-                Destination = r.Destination,
-                SeatsAvailable = b.SeatsAvailable
-            }).ToListAsync();
-            return View(buses);
+            // var buses = await _dBcontext.Buses.Join(_dBcontext.BusRoutes, b => b.BusId, r => r.BusId, (b, r) => new BusModel
+            // {
+            //     BusId = b.BusId,
+            //     BusNo = b.BusNo,
+            //     Capacity = b.Capacity,
+            //     Destination = r.Destination,
+            //     SeatsAvailable = b.SeatsAvailable
+            // }).ToListAsync();
+            //return View(buses);
+            return View();
         }
 
         [HttpGet]
@@ -65,7 +66,6 @@ namespace CompanyMvc.Controllers
             bustoUpdate.Capacity = bus.Capacity;
             bustoUpdate.SeatsAvailable = bus.SeatsAvailable;
             bustoUpdate.Type = bus.Type;
-            //_dBcontext.Buses.Update(bus);
             await _dBcontext.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

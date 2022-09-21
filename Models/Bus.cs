@@ -1,5 +1,3 @@
-using System.Text.Json.Serialization;
-
 namespace CompanyMvc.Models
 {
     public class Bus
@@ -11,7 +9,8 @@ namespace CompanyMvc.Models
         public int SeatsAvailable { get; set; }
         public DateTime DepartureTime { get; set; }
         public DateTime DateAvailable { get; set; }
-        [JsonIgnore]
-        public BusRoute? BusRoute { get; set; }
+        public int BusRouteId { get; set; }
+        //[JsonIgnore]
+        public BusRoute BusRoute { get; set; } = null!;
     }
 }

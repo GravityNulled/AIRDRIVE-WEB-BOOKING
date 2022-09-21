@@ -29,19 +29,19 @@ public class HomeController : Controller
         return View(model);
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Index(RoutesViewModel routesViewModel)
-    {
-        var route = routesViewModel.SelectedRouteTag;
-        DateTime travelDate = routesViewModel.TravelDate;
-        var routeBus = _dbContext.BusRoutes.FirstOrDefault(t => t.RouteTag == route);
-        if (routeBus == null) return RedirectToAction(nameof(Index));
-        var busFound = await _dbContext.Buses.FindAsync(Convert.ToInt32(routeBus.BusId));
-        if (busFound == null) return RedirectToAction(nameof(Index));
-        if (busFound.DateAvailable != travelDate) return RedirectToAction(nameof(Index));
-        ViewBag.Buses = busFound;
-        return RedirectToAction("Index", "Bus");
-    }
+    // [HttpPost]
+    // public async Task<IActionResult> Index(RoutesViewModel routesViewModel)
+    // {
+    //     var route = routesViewModel.SelectedRouteTag;
+    //     DateTime travelDate = routesViewModel.TravelDate;
+    //     var routeBus = _dbContext.BusRoutes.FirstOrDefault(t => t.RouteTag == route);
+    //     if (routeBus == null) return RedirectToAction(nameof(Index));
+    //     var busFound = await _dbContext.Buses.FindAsync(Convert.ToInt32(routeBus.BusId));
+    //     if (busFound == null) return RedirectToAction(nameof(Index));
+    //     if (busFound.DateAvailable != travelDate) return RedirectToAction(nameof(Index));
+    //     ViewBag.Buses = busFound;
+    //     return RedirectToAction("Index", "Bus");
+    // }
 
     public IActionResult Privacy()
     {

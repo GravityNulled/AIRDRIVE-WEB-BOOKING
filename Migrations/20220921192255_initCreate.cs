@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -9,19 +10,19 @@ namespace CompanyMvc.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Buses",
+                name: "BusRoutes",
                 columns: table => new
                 {
-                    BusId = table.Column<int>(type: "INTEGER", nullable: false)
+                    BusRouteId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    BusNo = table.Column<string>(type: "TEXT", nullable: false),
-                    Type = table.Column<int>(type: "INTEGER", nullable: false),
-                    Capacity = table.Column<int>(type: "INTEGER", nullable: false),
-                    SeatsAvailable = table.Column<int>(type: "INTEGER", nullable: false)
+                    Price = table.Column<decimal>(type: "TEXT", nullable: false),
+                    RouteTag = table.Column<string>(type: "TEXT", nullable: false),
+                    Source = table.Column<string>(type: "TEXT", nullable: false),
+                    Destination = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Buses", x => x.BusId);
+                    table.PrimaryKey("PK_BusRoutes", x => x.BusRouteId);
                 });
 
             migrationBuilder.CreateTable(
@@ -40,24 +41,27 @@ namespace CompanyMvc.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "BusRoutes",
+                name: "Buses",
                 columns: table => new
                 {
-                    BusRouteId = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Price = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Source = table.Column<string>(type: "TEXT", nullable: false),
-                    Destination = table.Column<string>(type: "TEXT", nullable: false),
                     BusId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    BusNo = table.Column<string>(type: "TEXT", nullable: false),
+                    Type = table.Column<int>(type: "INTEGER", nullable: false),
+                    Capacity = table.Column<int>(type: "INTEGER", nullable: false),
+                    SeatsAvailable = table.Column<int>(type: "INTEGER", nullable: false),
+                    DepartureTime = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    DateAvailable = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    BusRouteId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BusRoutes", x => x.BusRouteId);
+                    table.PrimaryKey("PK_Buses", x => x.BusId);
                     table.ForeignKey(
-                        name: "FK_BusRoutes_Buses_BusId",
-                        column: x => x.BusId,
-                        principalTable: "Buses",
-                        principalColumn: "BusId",
+                        name: "FK_Buses_BusRoutes_BusRouteId",
+                        column: x => x.BusRouteId,
+                        principalTable: "BusRoutes",
+                        principalColumn: "BusRouteId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -101,10 +105,9 @@ namespace CompanyMvc.Migrations
                 column: "BusId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BusRoutes_BusId",
-                table: "BusRoutes",
-                column: "BusId",
-                unique: true);
+                name: "IX_Buses_BusRouteId",
+                table: "Buses",
+                column: "BusRouteId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -113,13 +116,13 @@ namespace CompanyMvc.Migrations
                 name: "Bookings");
 
             migrationBuilder.DropTable(
-                name: "BusRoutes");
+                name: "Buses");
 
             migrationBuilder.DropTable(
                 name: "Users");
 
             migrationBuilder.DropTable(
-                name: "Buses");
+                name: "BusRoutes");
         }
     }
 }
