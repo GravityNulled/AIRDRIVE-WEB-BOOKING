@@ -2,6 +2,8 @@
 using CompanyMvc.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using CompanyMvc.Data;
+using CompanyMvc.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CompanyMvc.Controllers;
 
@@ -9,6 +11,7 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
     private readonly ApplicationDbContext _dbContext;
+    private static List<BusModel> FoundbusesList = new List<BusModel>();
     public HomeController(ILogger<HomeController> logger, ApplicationDbContext dbContext)
     {
         _logger = logger;
@@ -29,18 +32,49 @@ public class HomeController : Controller
         return View(model);
     }
 
+    [HttpPost]
+    public async Task<ActionResult> Index(RoutesViewModel routesViewModel)
+    {
+        var route = routesViewModel.SelectedRouteTag;
+        DateTime travelDate = routesViewModel.TravelDate;
+        var routeBuses = _dbContext.BusRoutes.Where(t => t.RouteTag == route).ToList();
+        if (routeBuses == null) return RedirectToAction(nameof(Index));
+        foreach (var routeBus in routeBuses)
+        {
+            var busFound = await _dbContext.Buses.Where(id => id.BusId == Convert.ToInt32(routeBus.BusId)).ToListAsync();
+            if (busFound == null) return RedirectToAction(nameof(Index));
+            var currentBus = busFound.Join(routeBuses, b => b.BusId, r => r.BusId, (b, r) => new BusModel
+            {
+                BusId = b.BusId,
+                BusNo = b.BusNo,
+                Capacity = b.Capacity,
+                Source = r.Source,
+                Destination = r.Destination,
+                RouteTag = r.RouteTag,
+                SeatsAvailable = b.SeatsAvailable,
+                Price = r.Price,
+                DateAvailable = b.DateAvailable,
+                DepartureTime = b.DepartureTime
+            }).FirstOrDefault();
+            if (currentBus.DateAvailable == travelDate)
+            {
+                FoundbusesList.Add(currentBus);
+            }
+        }
+        return RedirectToAction(nameof(Booking));
+    }
+
+    [HttpGet]
+    public IActionResult Booking()
+    {
+        var buses = FoundbusesList;
+        return View(buses);
+    }
+
     // [HttpPost]
-    // public async Task<IActionResult> Index(RoutesViewModel routesViewModel)
+    // public IActionResult Booking()
     // {
-    //     var route = routesViewModel.SelectedRouteTag;
-    //     DateTime travelDate = routesViewModel.TravelDate;
-    //     var routeBus = _dbContext.BusRoutes.FirstOrDefault(t => t.RouteTag == route);
-    //     if (routeBus == null) return RedirectToAction(nameof(Index));
-    //     var busFound = await _dbContext.Buses.FindAsync(Convert.ToInt32(routeBus.BusId));
-    //     if (busFound == null) return RedirectToAction(nameof(Index));
-    //     if (busFound.DateAvailable != travelDate) return RedirectToAction(nameof(Index));
-    //     ViewBag.Buses = busFound;
-    //     return RedirectToAction("Index", "Bus");
+    //     return View();
     // }
 
     public IActionResult Privacy()

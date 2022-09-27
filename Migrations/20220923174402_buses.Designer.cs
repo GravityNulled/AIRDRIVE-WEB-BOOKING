@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CompanyMvc.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220921192255_initCreate")]
-    partial class initCreate
+    [Migration("20220923174402_buses")]
+    partial class buses
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -81,7 +81,7 @@ namespace CompanyMvc.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("BusRouteId")
+                    b.Property<int?>("BusRouteId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Capacity")
@@ -90,7 +90,7 @@ namespace CompanyMvc.Migrations
                     b.Property<DateTime>("DateAvailable")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("DepartureTime")
+                    b.Property<string>("DepartureTime")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("SeatsAvailable")
@@ -110,6 +110,9 @@ namespace CompanyMvc.Migrations
                 {
                     b.Property<int>("BusRouteId")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("BusId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Destination")
@@ -155,9 +158,7 @@ namespace CompanyMvc.Migrations
                 {
                     b.HasOne("CompanyMvc.Models.BusRoute", "BusRoute")
                         .WithMany("Bus")
-                        .HasForeignKey("BusRouteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BusRouteId");
 
                     b.Navigation("BusRoute");
                 });

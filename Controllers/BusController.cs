@@ -15,16 +15,19 @@ namespace CompanyMvc.Controllers
 
         public async Task<ActionResult<BusModel>> Index()
         {
-            // var buses = await _dBcontext.Buses.Join(_dBcontext.BusRoutes, b => b.BusId, r => r.BusId, (b, r) => new BusModel
-            // {
-            //     BusId = b.BusId,
-            //     BusNo = b.BusNo,
-            //     Capacity = b.Capacity,
-            //     Destination = r.Destination,
-            //     SeatsAvailable = b.SeatsAvailable
-            // }).ToListAsync();
-            //return View(buses);
-            return View();
+            var buses = await _dBcontext.Buses.Join(_dBcontext.BusRoutes, b => b.BusId, r => r.BusId, (b, r) => new BusModel
+            {
+                BusId = b.BusId,
+                BusNo = b.BusNo,
+                Capacity = b.Capacity,
+                Source = r.Source,
+                Destination = r.Destination,
+                RouteTag = r.RouteTag,
+                SeatsAvailable = b.SeatsAvailable,
+                DateAvailable = b.DateAvailable,
+                DepartureTime = b.DepartureTime
+            }).ToListAsync();
+            return View(buses);
         }
 
         [HttpGet]

@@ -7,6 +7,7 @@ namespace CompanyMvc.Models
         public string RouteTag { get; set; } = null!;
         public string Source { get; set; } = null!;
         public string Destination { get; set; } = null!;
-        public ICollection<Bus> Bus { get; set; } = null!;
+        public int BusId { get; set; }
+        public Bus? Bus { get; set; }
     }
 }

@@ -1,0 +1,98 @@
+@model CompanyMvc.Models.ViewModels.RegistrationViewModel;
+
+@{
+    ViewData["Title"] = "User Registration";
+}
+
+<section class="">
+  <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+    <div class="container">
+      <div class="row gx-lg-5 align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <h1 class="my-5 display-3 fw-bold ls-tight">
+            Welcome to<br />
+            <span class="text-primary">Airdrive</span>
+          </h1>
+          <p style="color: hsl(217, 10%, 50.8%)">
+            Get rewards for booking your trip with us
+          </p>
+        </div>
+
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="card">
+            <div class="card-body py-5 px-md-5">
+              <form asp-action="Register" asp-controller="User" method="post">
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <input asp-for="FirstName" type="text" class="form-control" />
+                      <label class="form-label">First name</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <input asp-for="LastName" type="text" id="form3Example2" class="form-control" />
+                      <label class="form-label" >Last name</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- 2 column grid layout with text inputs for the Id and Phone -->
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <input asp-for="NationalId" type="text" class="form-control" />
+                      <label class="form-label" >National ID</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <input asp-for="PhoneNumber" type="text" class="form-control" />
+                      <label class="form-label" >Phone Number</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input asp-for="Email" type="email" class="form-control" />
+                  <label class="form-label">Email address</label>
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input asp-for="Password" type="password" class="form-control" />
+                  <label class="form-label">Password</label>
+                </div>
+                <!-- Confirm Password input -->
+                <div class="form-outline mb-4">
+                  <input asp-for="ConfirmPassword" type="password" class="form-control" />
+                  <label class="form-label">Confirm Password</label>
+                </div>
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">
+                  Sign up
+                </button>
+
+                <!-- Register buttons -->
+                <div class="text-center">
+                  <p>Follow us on:</p>
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-facebook-f"></i>
+                  </button>
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-twitter"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fa-brands fa-instagram"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

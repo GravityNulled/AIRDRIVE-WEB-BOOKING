@@ -1,0 +1,40 @@
+@model List<CompanyMvc.Models.BusModel>;
+@{
+    ViewData["Title"] = "Booking Page";
+}
+
+<h1 class="text-center">Please Select A bus Bellow</h1>
+@foreach (var bus in Model)
+{
+  <form asp-action="Booking" asp-controller="Home" method="post">
+<div class="container card mx-auto w-50 p-3 mb-3">
+  <div class="row">
+    <div class="col-sm">
+    <i class="fa-solid fa-bus fa-2xl"></i>
+    </div>
+    <div class="col-sm">
+    <div>
+      <lable>Source:</lable>
+      <lable>@bus.Source</lable>
+    </div>
+    <div class="items">
+      <lable>Destination:</lable>
+      <lable>@bus.Destination</lable>
+    </div>
+    </div>
+    <div class="col-sm">
+      <div>
+        <lable>Seats:</lable>
+      <lable>@bus.SeatsAvailable</lable>
+      </div>
+      <div class="price">
+        <lable>Price:</lable>
+        <lable>@bus.Price</lable>
+      </div>
+    </div>
+        <button type="submit" class="btn btn-outline-primary mt-3 w-30">Book</button>
+  </div>
+</div>
+  </form>
+
+}

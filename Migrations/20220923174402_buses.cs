@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CompanyMvc.Migrations
 {
-    public partial class initCreate : Migration
+    public partial class buses : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,7 +18,8 @@ namespace CompanyMvc.Migrations
                     Price = table.Column<decimal>(type: "TEXT", nullable: false),
                     RouteTag = table.Column<string>(type: "TEXT", nullable: false),
                     Source = table.Column<string>(type: "TEXT", nullable: false),
-                    Destination = table.Column<string>(type: "TEXT", nullable: false)
+                    Destination = table.Column<string>(type: "TEXT", nullable: false),
+                    BusId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -50,9 +51,9 @@ namespace CompanyMvc.Migrations
                     Type = table.Column<int>(type: "INTEGER", nullable: false),
                     Capacity = table.Column<int>(type: "INTEGER", nullable: false),
                     SeatsAvailable = table.Column<int>(type: "INTEGER", nullable: false),
-                    DepartureTime = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    DepartureTime = table.Column<string>(type: "TEXT", nullable: true),
                     DateAvailable = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    BusRouteId = table.Column<int>(type: "INTEGER", nullable: false)
+                    BusRouteId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -61,8 +62,7 @@ namespace CompanyMvc.Migrations
                         name: "FK_Buses_BusRoutes_BusRouteId",
                         column: x => x.BusRouteId,
                         principalTable: "BusRoutes",
-                        principalColumn: "BusRouteId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "BusRouteId");
                 });
 
             migrationBuilder.CreateTable(

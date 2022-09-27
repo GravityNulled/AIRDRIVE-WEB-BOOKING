@@ -1,15 +1,12 @@
-using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Identity;
 
 namespace CompanyMvc.Models
 {
-    public class ApplicationUser
+    public class ApplicationUser : IdentityUser
     {
-        public int Id { get; set; }
         public string FirstName { get; set; } = null!;
-        public string SecondName { get; set; } = null!;
+        public string LastName { get; set; } = null!;
+        public string? NationalId { get; set; }
         public int Age { get; set; }
-        [JsonIgnore]
-
-        public Booking Booking { get; set; } = null!;
     }
 }
