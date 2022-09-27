@@ -61,14 +61,21 @@ namespace CompanyMvc.Controllers
         {
             if (ModelState.IsValid)
             {
-
-                var result = await _signManager.PasswordSignInAsync(loginViewModel.Email, loginViewModel.Password, false, false);
+                var user = new ApplicationUser();
+                user = await _userManager.FindByEmailAsync(loginViewModel.Email);
+                var result = await _signManager.PasswordSignInAsync(user.UserName, loginViewModel.Password, loginViewModel.Remember, false);
                 if (result.Succeeded)
                 {
                     return RedirectToAction(nameof(Index), "Home");
                 }
             }
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await _signManager.SignOutAsync();
+            return RedirectToAction(nameof(Index), "home");
         }
 
     }

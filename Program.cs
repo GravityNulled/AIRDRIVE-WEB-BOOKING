@@ -11,7 +11,14 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(opt =>
+{
+    opt.Password.RequiredLength = 6;
+    opt.Password.RequiredUniqueChars = 1;
+    opt.Password.RequireUppercase = false;
+    opt.Password.RequireNonAlphanumeric = false;
+    opt.Password.RequireDigit = false;
+})
         .AddEntityFrameworkStores<ApplicationDbContext>();
 var app = builder.Build();
 

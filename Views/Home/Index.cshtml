@@ -2,13 +2,12 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-<div>
+@* <div>
     <h1>Welcome To Airdrive Online Booking</h1>
     <h2>Book Your Tickets Here</h2>
 </div>
 <div>
     <p>Please choose your Destination and Deperture Locations</p>
-    <i class="fa-solid fa-bus"></i>
 </div>
 <div >
     <form method="post" asp-action="Index" asp-controller="Home">
@@ -26,4 +25,56 @@
     </div>
     <input type="submit" value="Submit" class="btn btn-primary">
     </form>  
+</div> *@
+<div id="booking" class="section-1">
+    <div class="section-1-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-md-push-5">
+                    <div class="booking-cta">
+                        <h1>Book with Us</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi facere, soluta magnam consectetur molestias itaque
+                            ad sint fugit architecto incidunt iste culpa perspiciatis possimus voluptates aliquid consequuntur cumque quasi.
+                            Perspiciatis.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-pull-7">
+                    <div class="booking-form">
+                        <form>
+                                <div class="form-group">
+                                        <span class="form-label">Source</span>
+                                        <select class="form-control">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                        <span class="select-arrow"></span>
+                                   </div>
+                          <div class="form-group">
+                                        <span class="form-label">Destination</span>
+                                        <select class="form-control">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                        <span class="select-arrow"></span>
+                                   </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <span class="form-label text-center">Travel Date</span>
+                                        <input class="form-control" type="date" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-btn">
+                                <button class="submit-btn">Check availability</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
