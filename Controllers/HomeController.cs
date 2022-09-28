@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using CompanyMvc.Data;
 using CompanyMvc.Models;
 using Microsoft.EntityFrameworkCore;
+using CompanyMvc.Helpers;
 
 namespace CompanyMvc.Controllers;
 
@@ -71,11 +72,39 @@ public class HomeController : Controller
         return View(buses);
     }
 
-    // [HttpPost]
-    // public IActionResult Booking()
-    // {
-    //     return View();
-    // }
+    [HttpGet]
+    public async Task<ActionResult> Cart(int id)
+    {
+
+        var bus = await _dbContext.Buses.FirstOrDefaultAsync(b => b.BusId == id);
+        var currentBus = _dbContext.Buses.Join(_dbContext.BusRoutes, b => b.BusId, r => r.BusId, (b, r) => new BusModel
+        {
+            BusId = b.BusId,
+            BusNo = b.BusNo,
+            Capacity = b.Capacity,
+            Source = r.Source,
+            Destination = r.Destination,
+            RouteTag = r.RouteTag,
+            SeatsAvailable = b.SeatsAvailable,
+            Price = r.Price,
+            DateAvailable = b.DateAvailable,
+            DepartureTime = b.DepartureTime
+        }).First();
+        if (SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "Cart") == null)
+        {
+            List<CartItem> Cart = new List<CartItem>();
+            Cart.Add(new CartItem { BusModel = currentBus, Quantity = 1 });
+            SessionHelper.SetObjectAsJson(HttpContext.Session, "Cart", Cart);
+        }
+        else
+        {
+            List<CartItem> Cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "Cart");
+            Cart.Add(new CartItem { BusModel = currentBus, Quantity = 1 });
+            SessionHelper.SetObjectAsJson(HttpContext.Session, "Cart", Cart);
+        }
+
+        return View();
+    }
 
     public IActionResult Privacy()
     {

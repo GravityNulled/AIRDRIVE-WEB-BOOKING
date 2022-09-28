@@ -8,57 +8,65 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CompanyMvc
 build_property.RootNamespace = CompanyMvc
-build_property.ProjectDir = C:\Users\Omar\Desktop\C# WebProjects\CompanyMvc\
+build_property.ProjectDir = c:\Users\Omar\Desktop\C# WebProjects\CompanyMvc\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Omar\Desktop\C# WebProjects\CompanyMvc
+build_property.MSBuildProjectDirectory = c:\Users\Omar\Desktop\C# WebProjects\CompanyMvc
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/Bus/Create.cshtml]
+[c:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/Bus/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/Bus/Edit.cshtml]
+[c:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/Bus/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/Bus/Index.cshtml]
+[c:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/Bus/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/Home/Booking.cshtml]
+[c:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/Home/Booking.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCb29raW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/Home/Index.cshtml]
+[c:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/Home/Cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/Home/Privacy.cshtml]
+[c:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/User/Login.cshtml]
+[c:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/User/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/User/Register.cshtml]
+[c:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/User/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/_ViewImports.cshtml]
+[c:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/_ViewStart.cshtml]
+[c:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/Shared/_Layout.cshtml]
+[c:/Users/Omar/Desktop/C\# WebProjects/CompanyMvc/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-vmu5k7csy2
