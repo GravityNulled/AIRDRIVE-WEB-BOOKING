@@ -31,14 +31,14 @@
                      <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                         <!-- Data -->
                         <p><strong>Airdrive Bus</strong></p>
-                        <p>Color: blue</p>
+                        <p>Color: Blue</p>
                         <p>Type: @CartItem.BusModel.Type</p>
                         <!-- Data -->
                      </div>
                      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                         <!-- Price -->
                         <p class="text-start text-md-center">
-                           <strong>@CartItem.BusModel.Price</strong>
+                           <strong>Price: Ksh @CartItem.BusModel.Price</strong>
                         </p>
                         <!-- Price -->
                      </div>
@@ -120,7 +120,7 @@
                     <div class="tab-content">
                         <!-- credit card info-->
                         <div id="credit-card" class="tab-pane fade show active pt-3">
-                            <form role="form">
+                            <form method="post">
                                 <div class="form-group"> <label for="username">
                                         <h6>Card Owner</h6>
                                     </label> <input type="text" name="username" placeholder="Card Owner Name" required class="form-control "> </div>
@@ -145,7 +145,7 @@
                                             </label> <input type="text" required class="form-control"> </div>
                                     </div>
                                 </div>
-                                <div class="card-footer"> <button type="button" class="subscribe btn btn-primary btn-block shadow-sm"> Confirm Payment </button>
+                                <div class="card-footer"> <button type="button" class="subscribe btn btn-primary btn-block shadow-sm" asp-action="Index" asp-controller="Booking"> Confirm Payment </button>
                             </form>
                         </div>
                     </div> <!-- End -->
@@ -154,3 +154,113 @@
             </div>
         </div>
     </div>
+
+    @* <!-- Credit card form -->
+<section class="container">
+  <div class="row">
+    <div class="col-md-8 mb-4">
+      <div class="card mb-4">
+        <div class="card-header py-3">
+          <h5 class="mb-0">Biling details</h5>
+        </div>
+        <div class="card-body">
+          <form>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="form6Example1" class="form-control" />
+                  <label class="form-label" for="form6Example1">First name</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="form6Example2" class="form-control" />
+                  <label class="form-label" for="form6Example2">Last name</label>
+                </div>
+              </div>
+            </div>
+            <!--            Another   -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="form6Example1" class="form-control" />
+                  <label class="form-label" for="form6Example1">Email</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="form6Example2" class="form-control" />
+                  <label class="form-label" for="form6Example2">Phone Number</label>
+                </div>
+              </div>
+            </div>
+            <!--             End -->
+
+            <!-- Text input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="form6Example3" class="form-control" />
+              <label class="form-label" for="form6Example3">Company name</label>
+            </div>
+
+            <!-- Text input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="form6Example4" class="form-control" />
+              <label class="form-label" for="form6Example4">Address</label>
+            </div>
+            <hr class="my-4" />
+
+            <h5 class="mb-4">Payment</h5>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="checkoutForm3" checked />
+              <label class="form-check-label" for="checkoutForm3">
+                Credit card
+              </label>
+            </div>
+
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="checkoutForm4" />
+              <label class="form-check-label" for="checkoutForm4">
+                Debit card
+              </label>
+            </div>
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="formNameOnCard" class="form-control" />
+                  <label class="form-label" for="formNameOnCard">Name on card</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="formCardNumber" class="form-control" />
+                  <label class="form-label" for="formCardNumber">Credit card number</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-4">
+              <div class="col-3">
+                <div class="form-outline">
+                  <input type="text" id="formExpiration" class="form-control" />
+                  <label class="form-label" for="formExpiration">Expiration</label>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-outline">
+                  <input type="text" id="formCVV" class="form-control" />
+                  <label class="form-label" for="formCVV">CVV</label>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-lg btn-block" type="submit">
+              Continue to checkout
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+</section>
+<!-- Credit card form --> *@

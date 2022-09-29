@@ -16308,6 +16308,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Omar\\Desktop\\C# WebProjects\\CompanyMvc\\Views\\Booking\\Index.cshtml",
+      "TargetPath": "Views\\Booking\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Omar\\Desktop\\C# WebProjects\\CompanyMvc\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"

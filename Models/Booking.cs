@@ -10,8 +10,7 @@ namespace CompanyMvc.Models
 
         public Bus? Bus { get; set; }
         public string DeputureTime { get; set; } = null!;
-        public string ArrivalTime { get; set; } = null!;
-        public int ApplicationUserId { get; set; }
+        public string ApplicationUserId { get; set; } = null!;
         [JsonIgnore]
         public ApplicationUser? ApplicationUser { get; set; }
     }
