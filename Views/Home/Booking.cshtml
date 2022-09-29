@@ -1,12 +1,12 @@
 @model List<CompanyMvc.Models.BusModel>;
 @{
-    ViewData["Title"] = "Booking Page";
+    ViewData["Title"] = "Bus Page";
 }
 
 <h1 class="text-center">Please Select A bus Bellow</h1>
 @foreach (var bus in Model)
 {
-  <form asp-action="Booking" asp-controller="Home" method="post">
+  <form method="post">
 <div class="container card mx-auto w-50 p-3 mb-3">
   <div class="row">
     <div class="col-sm">
@@ -31,12 +31,9 @@
         <lable>Price:</lable>
         <lable>@bus.Price</lable>
       </div>
-      <div>
-        <a class="btn btn-primary" asp-action="Cart" asp-controller="Home" asp-route-id="@bus.BusId">Book Bus</a>
-      </div>
-    @* </div>
-        <button type="submit" class="btn btn-outline-primary mt-3 w-30">Book</button>
-  </div> *@
+    </div>
+        <button type="submit" asp-action="AddCart" asp-controller="Home" asp-route-id="@bus.BusId" class="btn btn-outline-primary mt-3 w-30">Book</button>
+  </div>
 </div>
   </form>
 

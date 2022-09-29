@@ -1,0 +1,156 @@
+@using CompanyMvc.Helpers
+@using CompanyMvc.Models.ViewModels
+@{
+    ViewData["Title"] = "Booking Page";
+}
+
+@foreach (var CartItem in ViewBag.Cart)
+{
+<section class="h-100 gradient-custom">
+   <div class="container py-5">
+      <div class="row d-flex justify-content-center my-4">
+         <div class="col-md-8">
+            <div class="card mb-4">
+               <div class="card-header py-3">
+                  <h5 class="mb-0">Cart Details</h5>
+               </div>
+               <div class="card-body">
+                  <!-- Single item -->
+                  <div class="row">
+                     <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                        <!-- Image -->
+                        <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                           <img src="https://www.sustainable-bus.com/wp-content/uploads/2019/12/scania-bus4.jpg"
+                              class="w-100" alt="Bus" />
+                           <a href="#!">
+                              <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                           </a>
+                        </div>
+                        <!-- Image -->
+                     </div>
+                     <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                        <!-- Data -->
+                        <p><strong>Airdrive Bus</strong></p>
+                        <p>Color: blue</p>
+                        <p>Type: @CartItem.BusModel.Type</p>
+                        <!-- Data -->
+                     </div>
+                     <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                        <!-- Price -->
+                        <p class="text-start text-md-center">
+                           <strong>@CartItem.BusModel.Price</strong>
+                        </p>
+                        <!-- Price -->
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="card mb-4">
+               <div class="card-body">
+                  <p><strong>Travel Time</strong></p>
+                  <p class="mb-0">@CartItem.BusModel.DepartureTime</p>
+               </div>
+            </div>
+            <div class="card mb-4 mb-lg-0">
+               <div class="card-body">
+                  <p><strong>We accept</strong></p>
+                  <img class="me-2" width="100px"
+                     src="https://www.obc.co.ke/wp-content/uploads/2022/07/paybill-1170x700.jpg"
+                     alt="M-Pesa" />
+                  <img class="me-2" width="100px"
+                    src="https://www.clipartmax.com/png/middle/82-826760_coin-money-6-icon-cash-icon.png"
+                     alt="Cash" />
+                     <img class="me-2" width="100px"
+                    src="https://i.imgur.com/6LW064C.png"
+                     alt="Card" />
+               </div>
+            </div>
+         </div>
+         <div class="col-md-4">
+            <div class="card mb-4">
+               <div class="card-header py-3">
+                  <h5 class="mb-0">Summary</h5>
+               </div>
+               <div class="card-body">
+                     <ul class="list-group list-group-flush">
+                     <li
+                        class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        Cost
+                        <span>@CartItem.BusModel.Price</span>
+                     </li>
+                     <li
+                        class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                        <div>
+                           <strong>Total amount</strong>
+                           <strong>
+                              <p class="mb-0">(including VAT)</p>
+                           </strong>
+                        </div>
+                        <span><strong>@CartItem.BusModel.Price</strong></span>
+                     </li>
+                  </ul>
+                  <button type="button" class="btn btn-primary btn-lg btn-block">
+                  Go to checkout
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+}
+<div class="gradient-custom">
+    <!-- For demo purpose -->
+    <div class="row mb-4">
+        <div class="col-lg-8 mx-auto text-center">
+            <h1 class="display-6">Enter Payment Details</h1>
+        </div>
+    </div> <!-- End -->
+    <div class="row">
+        <div class="col-lg-6 mx-auto">
+            <div class="card ">
+                <div class="card-header">
+                    <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
+                        <!-- Credit card form tabs -->
+                        <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
+                            <li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Credit Card </a> </li>
+                        </ul>
+                    </div> <!-- End -->
+                    <!-- Credit card form content -->
+                    <div class="tab-content">
+                        <!-- credit card info-->
+                        <div id="credit-card" class="tab-pane fade show active pt-3">
+                            <form role="form">
+                                <div class="form-group"> <label for="username">
+                                        <h6>Card Owner</h6>
+                                    </label> <input type="text" name="username" placeholder="Card Owner Name" required class="form-control "> </div>
+                                <div class="form-group"> <label for="cardNumber">
+                                        <h6>Card number</h6>
+                                    </label>
+                                    <div class="input-group"> <input type="text" name="cardNumber" placeholder="Valid card number" class="form-control " required>
+                                        <div class="input-group-append"> <span class="input-group-text text-muted"> <i class="fab fa-cc-visa mx-1"></i> <i class="fab fa-cc-mastercard mx-1"></i> <i class="fab fa-cc-amex mx-1"></i> </span> </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <div class="form-group"> <label><span class="hidden-xs">
+                                                    <h6>Expiration Date</h6>
+                                                </span></label>
+                                            <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control" required> <input type="number" placeholder="YY" name="" class="form-control" required> </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group mb-4"> <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
+                                                <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
+                                            </label> <input type="text" required class="form-control"> </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer"> <button type="button" class="subscribe btn btn-primary btn-block shadow-sm"> Confirm Payment </button>
+                            </form>
+                        </div>
+                    </div> <!-- End -->
+                    <!-- End -->
+                </div>
+            </div>
+        </div>
+    </div>

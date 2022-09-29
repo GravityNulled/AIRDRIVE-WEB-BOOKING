@@ -73,7 +73,15 @@ public class HomeController : Controller
     }
 
     [HttpGet]
-    public async Task<ActionResult> Cart(int id)
+    public IActionResult Shopping()
+    {
+        var Cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "Cart");
+        ViewBag.Cart = Cart;
+        return View();
+    }
+
+    [HttpPost]
+    public async Task<ActionResult> AddCart(int id)
     {
 
         var bus = await _dbContext.Buses.FirstOrDefaultAsync(b => b.BusId == id);
@@ -103,7 +111,7 @@ public class HomeController : Controller
             SessionHelper.SetObjectAsJson(HttpContext.Session, "Cart", Cart);
         }
 
-        return View();
+        return RedirectToAction("Shopping");
     }
 
     public IActionResult Privacy()
