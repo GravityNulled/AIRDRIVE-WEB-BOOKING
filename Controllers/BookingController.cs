@@ -14,7 +14,7 @@ namespace CompanyMvc.Controllers
             _userManager = userManager;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Home()
         {
             var Cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "Cart");
             ViewBag.Cart = Cart;

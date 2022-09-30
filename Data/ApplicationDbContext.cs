@@ -13,5 +13,7 @@ namespace CompanyMvc.Data
         public DbSet<Booking> Bookings { get; set; } = null!;
         public DbSet<Bus> Buses { get; set; } = null!;
         public DbSet<BusRoute> BusRoutes { get; set; } = null!;
+        //public DbSet<Payment> Payments { get; set; } = null!;
+
     }
 }

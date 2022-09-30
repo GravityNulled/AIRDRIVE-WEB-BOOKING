@@ -75,9 +75,10 @@ public class HomeController : Controller
     [HttpGet]
     public IActionResult Shopping()
     {
+        var booking = new Booking();
         var Cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "Cart");
         ViewBag.Cart = Cart;
-        return View();
+        return View(booking);
     }
 
     [HttpPost]
