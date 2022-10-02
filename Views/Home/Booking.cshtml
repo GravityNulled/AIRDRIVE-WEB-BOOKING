@@ -7,34 +7,43 @@
 @foreach (var bus in Model)
 {
   <form method="post">
-<div class="container card mx-auto w-50 p-3 mb-3">
-  <div class="row">
-    <div class="col-sm">
-    <i class="fa-solid fa-bus fa-2xl"></i>
-    </div>
-    <div class="col-sm">
-    <div>
-      <lable>Source:</lable>
-      <lable>@bus.Source</lable>
-    </div>
-    <div class="items">
-      <lable>Destination:</lable>
-      <lable>@bus.Destination</lable>
-    </div>
-    </div>
-    <div class="col-sm">
-      <div>
-        <lable>Seats:</lable>
-      <lable>@bus.SeatsAvailable</lable>
+  <div class="container card mx-auto w-50 p-3 mb-3 mt-2">
+    <div class="row">
+      <div class="col-md-1">
+        <i class="fa-solid fa-bus fa-2xl"></i>
       </div>
-      <div class="price">
-        <lable>Price:</lable>
-        <lable>@bus.Price</lable>
+      <div class="col-sm">
+        <div>
+          <i class="fa-sharp fa-solid fa-circle-dot"></i>
+          <lable>Source:</lable>
+          <lable>@bus.Source</lable>
+        </div>
+        <div class="items">
+          <i class="fa-solid fa-location-dot"></i>
+          <lable>Destination:</lable>
+          <lable>@bus.Destination</lable>
+        </div>
       </div>
-    </div>
+      <div class="col-sm">
+        <div>
+          <lable>Seats:</lable>
+          <lable>@bus.SeatsAvailable</lable>
+        </div>
+        <div class="price">
+          <lable>Price:</lable>
+          <lable>@bus.Price</lable>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <lable>Amenities</lable>
+        <br>
+        <i class="fa-solid fa-wifi"></i>
+        <i class="fa-brands fa-usb"></i>
+      </div>
+      <div class="col-sm-2">
         <button type="submit" asp-action="AddCart" asp-controller="Home" asp-route-id="@bus.BusId" class="btn btn-outline-primary mt-3 w-30">Book</button>
+      </div>
+    </div>
   </div>
-</div>
-  </form>
-
+</form>
 }

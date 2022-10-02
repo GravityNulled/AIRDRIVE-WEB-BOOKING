@@ -1,0 +1,15 @@
+@model CompanyMvc.Models.ViewModels.CreateRoleViewModel
+
+@{
+    ViewData["Title"] = "Create Role Page";
+}
+<div class="container">
+  <form asp-action="CreateRole" asp-controller="Admin">
+  <div class="mb-3">
+    <label class="form-label">Create Role</label>
+    <input type="text" class="form-control" asp-for="RoleName" aria-describedby="RoleHelp">
+    <div id="RoleHelp" class="form-text">Enter The Role Name</div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>

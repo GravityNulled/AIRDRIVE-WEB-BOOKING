@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CompanyMvc.styles.css" asp-append-version="true" />
-    <script src="https://kit.fontawesome.com/c03a81ce8e.js" crossorigin="anonymous"></script>
-    
+
 </head>
 <body>
     <header>
@@ -28,26 +27,30 @@
                         @if (_signInManager.IsSignedIn(User))
                         {
                             <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Index">My Account</a>
+                                <i class="fa-solid fa-user 2xl"></i>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Index">My Account</a>
                             </li>
                             <li class="nav-item">
+                                <i class="fa-regular fa-right-from-bracket fa-2xl"></i>
                                 <form asp-action="Logout" asp-controller="User" method="post">
                                     <button type="submit" class="btn btn-link nav-link py-0" style="width: auto;">LogOut @User.Identity.Name</button>
                                 </form>
                             </li>
-                            <li class="nav-item">
+                            @* <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Bus" asp-action="Index">View Buses</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Bus" asp-action="Create">Add Buses</a>
-                            </li>
+                            </li> *@
                         }else
                         {
                             <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Login">Login</a>
+                                <i class="fa-regular fa-right-to-bracket"></i>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Login">Login</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Register">Register</a>
+                                <i class="fa-sharp fa-solid fa-arrow-right-to-arc fa-2xl"></i>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Register">Register</a>
                             </li>
                         }
                         
@@ -67,6 +70,7 @@
             &copy; 2022 - CompanyMvc - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+    <script src="https://kit.fontawesome.com/c03a81ce8e.js" crossorigin="anonymous"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
