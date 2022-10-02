@@ -13,7 +13,8 @@
           "Microsoft.EntityFrameworkCore.Design": "6.0.8",
           "Microsoft.EntityFrameworkCore.Sqlite": "6.0.8",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.8",
-          "Newtonsoft.Json": "13.0.1"
+          "Newtonsoft.Json": "13.0.1",
+          "Syncfusion.EJ2.AspNet.Core": "20.3.0.47"
         },
         "runtime": {
           "CompanyMvc.dll": {}
@@ -359,6 +360,26 @@
           }
         }
       },
+      "Syncfusion.EJ2.AspNet.Core/20.3.0.47": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "Syncfusion.Licensing": "20.3.0.47"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Syncfusion.EJ2.dll": {
+            "assemblyVersion": "20.3.0.47",
+            "fileVersion": "20.3.0.47"
+          }
+        }
+      },
+      "Syncfusion.Licensing/20.3.0.47": {
+        "runtime": {
+          "lib/net6.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "20.3.0.47",
+            "fileVersion": "20.3.0.47"
+          }
+        }
+      },
       "System.Buffers/4.5.1": {},
       "System.Collections.Immutable/6.0.0": {
         "dependencies": {
@@ -600,6 +621,20 @@
       "sha512": "sha512-peXLJbhU+0clVBIPirihM1NoTBqw8ouBpcUsVMlcZ4k6fcL2hwgkctVB2Nt5VsbnOJcPspQL5xQK7QvLpxkMgg==",
       "path": "sqlitepclraw.provider.e_sqlite3/2.0.6",
       "hashPath": "sqlitepclraw.provider.e_sqlite3.2.0.6.nupkg.sha512"
+    },
+    "Syncfusion.EJ2.AspNet.Core/20.3.0.47": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-G6E8xEMzL224LrjASmdt9kINKzh5MUIGi9wLaQwAHVksR0YDmRF30jnMWRBVRxH7501RXCs8J0yZK3Jjsl/U9g==",
+      "path": "syncfusion.ej2.aspnet.core/20.3.0.47",
+      "hashPath": "syncfusion.ej2.aspnet.core.20.3.0.47.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/20.3.0.47": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZiRKdTzARG3yB9cNW4K1fKf7yRjG9LalULpou5p9JcNNWXC6bKpTbIFK9BxSpVUpQSN/ak+72boll1CFQPo3Tg==",
+      "path": "syncfusion.licensing/20.3.0.47",
+      "hashPath": "syncfusion.licensing.20.3.0.47.nupkg.sha512"
     },
     "System.Buffers/4.5.1": {
       "type": "package",

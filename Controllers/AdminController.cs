@@ -1,3 +1,4 @@
+using CompanyMvc.Models;
 using CompanyMvc.Models.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -7,16 +8,18 @@ namespace CompanyMvc.Controllers
     public class AdminController : Controller
     {
         private readonly RoleManager<IdentityRole> _roleManager;
-
-        public AdminController(RoleManager<IdentityRole> roleManager)
+        private readonly UserManager<ApplicationUser> _userManager;
+        public AdminController(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager)
         {
             _roleManager = roleManager;
+            _userManager = userManager;
         }
 
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            var users = _userManager.Users;
+            return View(users);
         }
 
         [HttpGet]

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2hFL0mJ76QK83VL8Oa1qapa24MtLhpcY3rjhead8wqGzYJnQ+AEMpwr9UrVD+s7h0d3/mhzchMYaFXYlj7H1Eg==",
+  "dgSpecHash": "GU4evWur3LQ3jPsXOVOgIjApG59fqcD42FgnVHDT6N/yFDuRkTwy+xlzcIbSrvyXuYVWv/R+TasAwnus50ZnyQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Omar\\Desktop\\C# WebProjects\\CompanyMvc\\CompanyMvc.csproj",
   "expectedPackageFiles": [
@@ -34,6 +34,8 @@
     "C:\\Users\\Omar\\.nuget\\packages\\sqlitepclraw.core\\2.0.6\\sqlitepclraw.core.2.0.6.nupkg.sha512",
     "C:\\Users\\Omar\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.6\\sqlitepclraw.lib.e_sqlite3.2.0.6.nupkg.sha512",
     "C:\\Users\\Omar\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.0.6\\sqlitepclraw.provider.e_sqlite3.2.0.6.nupkg.sha512",
+    "C:\\Users\\Omar\\.nuget\\packages\\syncfusion.ej2.aspnet.core\\20.3.0.47\\syncfusion.ej2.aspnet.core.20.3.0.47.nupkg.sha512",
+    "C:\\Users\\Omar\\.nuget\\packages\\syncfusion.licensing\\20.3.0.47\\syncfusion.licensing.20.3.0.47.nupkg.sha512",
     "C:\\Users\\Omar\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Omar\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Omar\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",

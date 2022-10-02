@@ -1,10 +1,11 @@
+@model IEnumerable<ApplicationUser>
 @{
     ViewData["Title"] = "Admin Page";
 }
 
 <div class="container">
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">DashBoard</h1>
+    <h1 class="h3 mb-0 text-gray-800 text-center">DashBoard</h1>
   </div>
   <div class="row">
     <!--   Users -->
@@ -15,7 +16,7 @@
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                 Users</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.Count()</div>
             </div>
             <div class="col-auto">
               <i class="fa-solid fa-user fa-2xl"></i>
@@ -33,7 +34,7 @@
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                 Roles</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">6</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.Count()</div>
             </div>
             <div class="col-auto">
               <i class="fa-solid fa-key fa-2xl"></i>
@@ -50,8 +51,8 @@
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                Users</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                Buses</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
             </div>
             <div class="col-auto">
               <i class="fa-solid fa-bus fa-2xl"></i>
@@ -61,5 +62,17 @@
       </div>
     </div>
     <!--     End Buses -->
+  </div>
+  <h1 class="h3 mb-0 mt-3 text-gray-800 text-center">Registered Users</h>
+  <div class="mt-4">
+    <ejs-grid id="grid" dataSource="@Model">
+      <e-grid-columns>
+        <e-grid-column field="UserName" headerText="Username"></e-grid-column>
+        <e-grid-column field="FirstName" headerText="First Name"></e-grid-column>
+        <e-grid-column field="LastName" headerText="Last Name"></e-grid-column>
+        <e-grid-column field="NationalId" headerText="National ID"></e-grid-column>
+        <e-grid-column field="Email" headerText="Email"></e-grid-column>
+      </e-grid-columns>
+    </ejs-grid>
   </div>
 </div>
