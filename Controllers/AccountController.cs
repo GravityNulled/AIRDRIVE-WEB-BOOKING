@@ -1,9 +1,11 @@
 using CompanyMvc.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CompanyMvc.Controllers
 {
+    [Authorize]
     public class AccountController : Controller
     {
         private readonly ILogger<AccountController> _logger;

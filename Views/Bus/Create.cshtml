@@ -1,7 +1,8 @@
 @model CompanyMvc.Models.Bus
 
 <h1>Create Bus</h1>
-<form asp-controller="Bus" asp-action="Create" method="post">
+<div class="container">
+    <form asp-controller="Bus" asp-action="Create" method="post">
     <div class="mb-3">
         <label asp-for="BusNo">Bus No</label>
         <input type="text" class="form-control" asp-for="BusNo">
@@ -28,3 +29,4 @@
     </div>
     <button class="btn btn-primary" type="submit">Submit Form</button>
 </form>
+</div>

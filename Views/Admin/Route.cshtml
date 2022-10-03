@@ -1,0 +1,30 @@
+@model CompanyMvc.Models.BusRoute
+@{
+    ViewData["Title"] = "Bus Routes";
+}
+<h1>Create Route</h1>
+<div class="container">
+    <form asp-controller="Admin" asp-action="Route" method="post">
+    <div class="mb-3">
+        <label asp-for="Price">Price</label>
+        <input type="text" class="form-control" asp-for="Price">
+    </div>
+    <div class="mb-3">
+        <label asp-for="RouteTag">RouteTag</label>
+        <input type="text" class="form-control" asp-for="RouteTag">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Source">Source</label>
+        <input type="number" class="form-control" asp-for="Source">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Destination">Destination</label>
+        <input type="text" class="form-control" asp-for="Destination">
+    </div>
+    <div class="mb-3">
+        <label asp-for="BusId">BusId</label>
+        <input type="number" class="form-control" asp-for="BusId">
+    </div>
+    <button class="btn btn-primary" type="submit">Submit Form</button>
+</form>
+</div>

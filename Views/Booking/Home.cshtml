@@ -1,8 +1,6 @@
-@model CompanyMvc.Models.Booking;
 @{
     ViewData["Title"] = "CheckOut Page";
 }
-<p>@Model.DeputureTime</p>
 <div class="center-card">
   <div class="card-payment">
     <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
@@ -10,10 +8,10 @@
     </div>
     <h1 class="h-payment">Success</h1>
     <p class="p-payment">We received your Payment request;<br /> we'll be in touch shortly!</p>
-    <p class="p-payment mt-2">Download your Ticket here</p>
+    @* <p class="p-payment mt-2">Download your Ticket here</p> *@
+    <a class="btn btn-outline-primary mt-2" href="@Url.ActionLink("Ticket", "Booking")">Download your Ticket here</a>
   </div>
 </div>
-
 @* <div class="center-card">
   <div class="card-payment">
     <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">

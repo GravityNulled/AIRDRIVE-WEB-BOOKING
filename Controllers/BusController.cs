@@ -1,10 +1,12 @@
 using CompanyMvc.Data;
 using CompanyMvc.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace CompanyMvc.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class BusController : Controller
     {
         private readonly ApplicationDbContext _dBcontext;

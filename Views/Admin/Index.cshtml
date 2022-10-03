@@ -2,6 +2,41 @@
 @{
     ViewData["Title"] = "Admin Page";
 }
+<!-- sidebar element declaration -->
+<ejs-sidebar id="default-sidebar" closeOnDocumentClick="false">
+	<e-content-template>
+		<div class="title-header">
+			<div style="display:inline-block">Menu</div>
+		</div>
+    <ul class="nav sidebar-nav flex-column">
+                <li class="mb-3 mt-6">
+                    <a href="#" class="btn btn-outline-primary" style="color: white;">
+                        <i class="fa-duotone fa-users"></i>
+                        <span class="e-text">Manage Users</span>
+                    </a>
+                </li>
+                <li class="mb-3">
+                    <a href="@Url.Action("CreateRole", "Admin")" class="btn btn-outline-primary" style="color: white;">
+                       <i class="fa-solid fa-key"></i>
+                        <span class="e-text">Manage Roles</span>
+                    </a>
+                </li>
+                <li class="mb-3">
+                    <a href="@Url.Action("Index", "Bus")" class="btn btn-outline-primary" style="color: white;">
+                        <i class="fa-solid fa-bus"></i>
+                        <span class="e-text">Manage Bus</span>
+                    </a>
+                </li>
+                <li class="mb-3">
+                    <a href="@Url.Action("ListRoutes", "Admin")" class="btn btn-outline-primary" style="color: white;">
+                        <i class="fa-solid fa-route"></i>
+                        <span class="e-text">Manage Routes</span>
+                    </a>
+                </li>
+            </ul>
+	</e-content-template>
+</ejs-sidebar>
+<!-- end of sidebar element -->
 
 <div class="container">
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -63,7 +98,7 @@
     </div>
     <!--     End Buses -->
   </div>
-  <h1 class="h3 mb-0 mt-3 text-gray-800 text-center">Registered Users</h>
+  <h1 class="h3 mb-0 mt-3 text-gray-800 text-center">Registered Users</h1>
   <div class="mt-4">
     <ejs-grid id="grid" dataSource="@Model">
       <e-grid-columns>

@@ -271,3 +271,19 @@ button {
   margin-bottom: 20px;
 }
 /* End Popular Destinations */
+/* SideBar */
+.title-header {
+  text-align: center;
+  font-size: 18px;
+  padding: 15px;
+}
+
+.title.default {
+  padding: 25px 15px 15px;
+}
+/* sidebar element styles */
+#default-sidebar {
+  background-color: rgb(25, 118, 210);
+  color: #ffffff;
+}
+/* End SideBar */
